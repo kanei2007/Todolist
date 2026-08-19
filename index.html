@@ -1,0 +1,321 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskSphere - Todo Application</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div>
+                <h1>Task<span>Sphere</span> ✨</h1>
+
+                <p>
+                    Organize your tasks. Manage your time. Stay productive.
+                </p>
+            </div>
+
+            <button id="themeBtn" class="theme-btn">
+                🌙
+            </button>
+
+        </header>
+
+
+        <!-- STATISTICS -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📋
+                </div>
+
+                <div>
+                    <h3 id="totalTasks">0</h3>
+                    <p>Total Tasks</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ⏳
+                </div>
+
+                <div>
+                    <h3 id="pendingTasks">0</h3>
+                    <p>Pending Tasks</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ✅
+                </div>
+
+                <div>
+                    <h3 id="completedTasks">0</h3>
+                    <p>Completed</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📈
+                </div>
+
+                <div>
+                    <h3 id="progress">0%</h3>
+                    <p>Progress</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ADD TASK -->
+
+        <section class="task-form">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="What needs to be done?"
+            >
+
+
+            <select id="category">
+
+                <option value="General">
+                    📌 General
+                </option>
+
+                <option value="Study">
+                    📚 Study
+                </option>
+
+                <option value="Work">
+                    💼 Work
+                </option>
+
+                <option value="Personal">
+                    🏠 Personal
+                </option>
+
+                <option value="Shopping">
+                    🛒 Shopping
+                </option>
+
+            </select>
+
+
+            <select id="priority">
+
+                <option value="Low">
+                    🟢 Low
+                </option>
+
+                <option value="Medium">
+                    🟡 Medium
+                </option>
+
+                <option value="High">
+                    🔴 High
+                </option>
+
+            </select>
+
+
+            <input
+                type="date"
+                id="dueDate"
+            >
+
+
+            <button
+                onclick="addTask()"
+                class="add-btn"
+            >
+                + Add Task
+            </button>
+
+        </section>
+
+
+        <!-- SEARCH AND FILTER -->
+
+        <section class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search your tasks..."
+                oninput="displayTasks()"
+            >
+
+
+            <select
+                id="filter"
+                onchange="displayTasks()"
+            >
+
+                <option value="all">
+                    All Tasks
+                </option>
+
+                <option value="pending">
+                    Pending
+                </option>
+
+                <option value="completed">
+                    Completed
+                </option>
+
+                <option value="high">
+                    High Priority
+                </option>
+
+            </select>
+
+
+            <select
+                id="sort"
+                onchange="displayTasks()"
+            >
+
+                <option value="newest">
+                    Newest
+                </option>
+
+                <option value="oldest">
+                    Oldest
+                </option>
+
+                <option value="priority">
+                    Priority
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- PROGRESS -->
+
+        <section class="progress-container">
+
+            <div class="progress-info">
+
+                <span>
+                    🎯 Overall Progress
+                </span>
+
+                <span id="progressText">
+                    0%
+                </span>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div id="progressBar"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TASK LIST -->
+
+        <section class="tasks-section">
+
+            <div class="section-title">
+
+                <h2>
+                    My Tasks
+                </h2>
+
+
+                <button
+                    onclick="deleteCompleted()"
+                    class="clear-btn"
+                >
+                    Clear Completed
+                </button>
+
+            </div>
+
+
+            <div id="taskList"></div>
+
+
+            <div
+                id="emptyMessage"
+                class="empty"
+            >
+
+                <div>
+                    📝
+                </div>
+
+                <h3>
+                    No tasks yet
+                </h3>
+
+                <p>
+                    Add your first task and start being productive!
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                TaskSphere © 2026
+            </p>
+
+            <p>
+                Name: <strong>Kaneimozhi</strong>
+                |
+                Register No: <strong>212224040147</strong>
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```

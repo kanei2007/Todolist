@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --background: #f5f7ff;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    transition: 0.3s;
+}
+
+body.dark {
+    --background: #111827;
+    --card: #1f2937;
+    --text: #f9fafb;
+    --muted: #9ca3af;
+    --border: #374151;
+}
+
+.app {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 35px 0;
+}
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 40px;
+    letter-spacing: -1px;
+}
+
+.header h1 span {
+    color: var(--primary);
+}
+
+.header p {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+.theme-btn {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--card);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    font-size: 21px;
+}
+
+/* STATISTICS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: var(--card);
+    padding: 22px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: var(--shadow);
+}
+
+.stat-icon {
+    font-size: 30px;
+}
+
+.stat-card h3 {
+    font-size: 26px;
+}
+
+.stat-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* TASK FORM */
+
+.task-form {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    gap: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--card);
+    color: var(--text);
+    outline: none;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary);
+}
+
+.add-btn {
+    border: none;
+    background: var(--primary);
+    color: white;
+    padding: 13px 20px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.add-btn:hover {
+    background: var(--primary-dark);
+}
+
+/* SEARCH */
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    flex: 1;
+}
+
+/* PROGRESS */
+
+.progress-container {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.progress-bar {
+    height: 12px;
+    background: var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: var(--primary);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+/* SECTION */
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.clear-btn {
+    border: none;
+    background: transparent;
+    color: #ef4444;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* TASK CARD */
+
+.task {
+    background: var(--card);
+    padding: 18px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary);
+}
+
+.task.completed {
+    opacity: 0.6;
+}
+
+.check {
+    width: 21px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.task-content {
+    flex: 1;
+}
+
+.task-title {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.task.completed .task-title {
+    text-decoration: line-through;
+}
+
+.task-info {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    background: #eef2ff;
+    color: #4f46e5;
+}
+
+.high {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.medium {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.low {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.task-actions {
+    display: flex;
+    gap: 7px;
+}
+
+.action-btn {
+    border: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.edit {
+    background: #e5e7eb;
+}
+
+.delete {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* EMPTY */
+
+.empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+}
+
+.empty div {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.empty h3 {
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    margin-top: 40px;
+    padding: 25px;
+    line-height: 1.8;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .task-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .add-btn {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .app {
+        width: 94%;
+        padding: 20px 0;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .header p {
+        font-size: 13px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+
+    .stat-icon {
+        font-size: 24px;
+    }
+
+    .task-form {
+        grid-template-columns: 1fr;
+    }
+
+    .add-btn {
+        grid-column: auto;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .task {
+        align-items: flex-start;
+    }
+
+    .task-actions {
+        flex-direction: column;
+    }
+
+    .section-title {
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
